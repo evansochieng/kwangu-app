@@ -1,12 +1,16 @@
 import Login from "./Login";
+import  Register  from "./Register";
 
 function App() {
 
-  return (
+    return  (
     <div>
-      <Login />
+     <Login/>
+     <Register/>
+   
     </div>
-  );
-}
-
-export default App;
+    )
+    };
+ export default App;
+  
+    
