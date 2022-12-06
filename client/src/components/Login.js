@@ -1,85 +1,47 @@
 import React from "react";
 
 function Login() {
-  return (
-    <div
-      className="login"
-      style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
-      <form style={{}}>
-        <p style={{ fontSize: "20px", fontWeight: "bold" }}>Kwangu App</p>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            marginBottom: "20px",
-          }}
-        >
-          <label htmlFor="username">Username</label>
-          <input
-            type="text"
-            name="username"
-            id="username"
-            style={{ marginTop: "5px", height: "30px" }}
-          />
-        </div>
-
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            marginBottom: "20px",
-            width: "400px",
-          }}
-        >
-          <label htmlFor="password">Password</label>
-          <input
-            type="text"
-            name="password"
-            id="password"
-            style={{ marginTop: "5px", height: "30px" }}
-          />
-        </div>
-
-        <button
-          style={{
-            width: "100px",
-            height: "40px",
-            color: "black",
-            fontWeight: "bold"
-          }}
-        >
-          Login
-        </button>
-
-        <div style={{ display: "flex", flexDirection: "row" }}>
-          <p
-            style={{
-              fontSize: "20px",
-              fontWeight: "bold",
-              marginRight: "10px",
-            }}
-          >
-            Don't have an account?
-          </p>
-          <button
-            style={{
-              width: "100px",
-              height: "50px",
-              color: "black",
-              fontWeight: "bold"
-            }}
-          >
-            Sign Up
-          </button>
-        </div>
-      </form>
-    </div>
-  );
+  return (<div className="loginbox">
+  <form className="forms">
+    <br></br>
+    <br></br>
+    <h1>Login here</h1>
+    <input
+      //value={userName}
+     // onChange={(e) => setUserName(e.target.value)}
+      placeholder="User name"
+      type="text"
+      name="userName"
+      className="form-group form-control"
+      required
+    />
+  
+    <br />
+    <input
+     // value={password}
+     // onChange={(e) => setPassword(e.target.value)}
+      placeholder="Password"
+      type="password"
+      name="password"
+      className="form-group form-control"
+      required
+    />{" "}
+    <br></br>
+    <button
+      type="submit"
+      //onClick={handleClick}
+      className="btn btn-primary">
+      <a href="/" id="btn">Login </a>
+    </button>
+    <br></br>
+    <a href="/">Forgot your password?</a>
+    <p>
+      Don't have an account yet?{" "}
+      <a href="./Register">Register </a>
+    </p>
+  </form>
+</div>
+);
 }
 
 export default Login;
