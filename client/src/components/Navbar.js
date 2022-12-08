@@ -2,47 +2,37 @@ import React from 'react'
 
 function Navbar() {
   return (
-  
-<div className="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div className="logo">
-         
-        </div>
-        <div className="collapse navbar-collapse">
-          <div class="collapse navbar-collapse" id="navbar">
-            <h1 className="header">
-              <a href="/" id="ch">
-                KWANGU APP
-              </a>
-            </h1>
-            <form class="form-inline" id="inline">
-              <input
-                class="form-control mr-sm-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              ></input>
-            </form>
-            <ul class="navbar-nav mr-auto">
-              {/* <li class="nav-item">
+    <div className="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div className="logo"></div>
+      <div className="collapse navbar-collapse">
+        <div className="collapse navbar-collapse" id="navbar">
+          <h1 className="header">
+            <a href="/home" id="ch">
+              Kwangu Homes
+            </a>
+          </h1>
+
+          <ul className="navbar-nav mr-auto">
+            {/* <li class="nav-item">
                 <a class="nav-link" href="./About">
                   About Us
                 </a>
               </li> */}
-              <li class="nav-item">
-                <a class="nav-link" href="./Login">
-                  Login
-                </a>
-              </li>
-              {/* <li class="nav-item">
+            {/* <li className="nav-item">
+              <a className="nav-link" href="./Login">
+                Login
+              </a>
+            </li> */}
+            {/* <li class="nav-item">
                 <a class="nav-link" href="./Contact">
                   Contact Us
                 </a>
               </li> */}
-            </ul>
-          </div>
+          </ul>
         </div>
       </div>
-    );
+    </div>
+  );
      
   
 }
