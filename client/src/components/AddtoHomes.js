@@ -7,8 +7,9 @@ function AddtoHomes() {
   const [description, setDescription] = useState("");
   const [image_url, setImage] = useState("");
   const [price, setPrice] = useState("");
-  const [bedrooms, setBeds] = useState("");
-  const [bathrooms, setBaths] = useState("");
+  const [no_of_bedrooms, setBeds] = useState("");
+  const [no_of_bathrooms, setBaths] = useState("");
+  const [user_id, setUser_id] = useState("");
   const [error, setError] = useState("");
 
 
@@ -29,8 +30,9 @@ function AddtoHomes() {
         description,
         image_url,
         price,
-        bedrooms,
-        bathrooms,
+        no_of_bedrooms,
+        no_of_bathrooms,
+        user_id,
       }),
     }).then((res) => {
       console.log(res);
@@ -55,7 +57,7 @@ function AddtoHomes() {
           value={name}
           onChange={(e) => setName(e.target.value)}
           placeholder="Username"
-          type="text"
+          type="name"
           className="form-group form-control"
           required
         />
@@ -82,7 +84,7 @@ function AddtoHomes() {
           value={image_url}
           onChange={(e) => setImage(e.target.value)}
           placeholder="http image url"
-          type="text"
+          type="url"
           className="form-group form-control"
           required
         />
@@ -97,7 +99,7 @@ function AddtoHomes() {
         />
         <br />
         <input
-          value={bedrooms}
+          value={no_of_bedrooms}
           onChange={(e) => setBeds(e.target.value)}
           placeholder="No of bedrooms"
           type="text"
@@ -106,9 +108,17 @@ function AddtoHomes() {
         />
         <br />
         <input
-          value={bathrooms}
+          value={no_of_bathrooms}
           onChange={(e) => setBaths(e.target.value)}
           placeholder="No of bathrooms"
+          type="text"
+          className="form-group form-control"
+          required
+        />
+        <input
+          value={user_id}
+          onChange={(e) => setUser_id(e.target.value)}
+          placeholder="user_id"
           type="text"
           className="form-group form-control"
           required

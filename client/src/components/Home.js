@@ -1,7 +1,6 @@
 import React, {useState,useEffect} from 'react'
 import Login from './Login';
 import {Route, useNavigate} from "react-router-dom"
-import AddtoHomes from './AddtoHomes';
 
 function Home({onLogout,setproperty}) {
 
@@ -60,6 +59,8 @@ function Home({onLogout,setproperty}) {
     </div>
   ));
 
+  // Handle Search
+
   function handleChange(e) {
     e.preventDefault();
     let searching = e.target.value.toLowerCase();
@@ -86,7 +87,7 @@ function Home({onLogout,setproperty}) {
 
   return (
     <div className="grey">
-      <button className="btn btn-primary" onClick={handleLogout} id="btn">
+      <button className="btn btn-primary" onClick={handleLogout} id="logout">
         {onLogout}Log Out
       </button>
       <br />

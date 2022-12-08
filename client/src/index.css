@@ -1,8 +1,8 @@
 *{
-  margin: 0px;
-  padding: 0px;
+  margin: 0px auto;
+  padding: 0;
   box-sizing: border-box;
-  overflow-x: hidden;
+  position: relative;
 }
 
 .forms{
@@ -55,11 +55,18 @@ img{
 .err{
   color: red;
 }
+#logout{
+  display: flex;
+  justify-content: flex-end;
+  float: right;
+  margin-right: 80px;
+}
 #btn{
   display: flex;
   justify-content: flex-end;
   float: right;
-  margin-right: 40px;
+  margin-top: 50px;
+  margin-right: -100px;
 }
 .row{
   padding-left: 40px;
