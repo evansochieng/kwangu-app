@@ -98,3 +98,37 @@ img{
 #pri{
   margin-left: 10%;
 }
+
+/* footer */
+.footer{
+  background-color: #228fc1;
+  color: White;
+  margin-top: 30px;
+  padding: 10px;
+}
+.foo{
+  display: flex;
+  justify-content: space-evenly;
+}
+.rows{
+  flex-direction: column;
+  margin-left: 5%;
+  width: 100%;
+}
+.rights{
+  display: flex;
+  justify-content: center;
+}
+.h-footer{
+  font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+#p-about{
+  color: white;
+  margin-left: -40px;
+  font-size: 16px;
+}
+#p-abouts{
+  color: white;
+  margin-left: 0px;
+  font-size: 16px;
+}
