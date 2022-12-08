@@ -1,3 +1,10 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
 .forms{
   margin-left: 30%;
   margin-right: 30%;
@@ -31,10 +38,16 @@ img{
   border-radius: 9px;
   height: 300px; 
 }
-h2{
+#h2{
   color: #0077ff;
-  align-items: center;
-  text-align: center;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+#header{
+  color: #0077ff;
+  display: flex;
+  justify-content: center;
 }
 #inline{
   margin-left: 10%;
@@ -48,7 +61,13 @@ h2{
   float: right;
   margin-right: 40px;
 }
-
+.row{
+  padding-left: 40px;
+  
+}
+.grey{
+  background-color: rgb(221, 225, 225);
+}
 .card{
   width: 18rem;
 }
@@ -60,4 +79,15 @@ h2{
 }
 #crd{
   margin-left: 20%;
+}
+#title{
+  color: #0077ff;
+}
+
+#exampleInputEmail1{
+  width: 70%;
+  margin-left: 10%;
+}
+#pri{
+  margin-left: 10%;
 }

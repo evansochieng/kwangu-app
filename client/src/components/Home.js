@@ -1,7 +1,7 @@
 import React, {useState,useEffect} from 'react'
 import Login from './Login';
 import {Route, useNavigate} from "react-router-dom"
-import Showproperty from './Showproperty';
+import AddtoHomes from './AddtoHomes';
 
 function Home({onLogout,setproperty}) {
 
@@ -43,20 +43,18 @@ function Home({onLogout,setproperty}) {
       <div className="card">
         <img src={house.image_url} className="card-img-top" alt="..." />
         <div className="card-body">
-          <h5 className="card-title">{house.name}</h5>
-          <h5 className="card-title">{house.price}</h5>
-          <h4 className="card-title">{house.Location}</h4>
-          <p className="card-title">Bedrooms : {house.no_of_bedrooms}</p>
-          <p className="card-title">Bathrooms : {house.no_of_bathrooms}</p>
-          <p className="card-text">{house.description}</p>
-          {/* <a href="/show"> */}
-            <button
-              className="btn btn-info"
-              onClick={() => handleShow(house.id)}
-            >
-              Check Property
-            </button>
-          {/* </a> */}
+          <h5 className="card-title" id="title">
+            {house.name}
+          </h5>
+          <h4 className="card-title" id="title">
+            Location : {house.location}
+          </h4>
+          <h5 className="card-title" id="tile">
+            {house.price}
+          </h5>
+          <button className="btn btn-info" onClick={() => handleShow(house.id)}>
+            Check Property
+          </button>
         </div>
       </div>
     </div>
@@ -66,7 +64,7 @@ function Home({onLogout,setproperty}) {
     e.preventDefault();
     let searching = e.target.value.toLowerCase();
     setHouses(copyHouses.filter((val) =>
-        val.name.toLowerCase().includes(searching.toLowerCase())
+        val.location.toLowerCase().includes(searching.toLowerCase())
       )
     );
   }
@@ -92,7 +90,16 @@ function Home({onLogout,setproperty}) {
         {onLogout}Log Out
       </button>
       <br />
-      <h2>Browse Our Propeties</h2>
+      <button
+        className="btn btn-primary"
+        id="btn"
+        onClick={() => {
+          return navigate("/new");
+        }}
+      >
+        Sell Property
+      </button>
+      <h2 id="header">Browse Our Propeties</h2>
       <br />
       <form className="form-inline " id="inline">
         <input
@@ -104,7 +111,7 @@ function Home({onLogout,setproperty}) {
         ></input>
       </form>
       <br />
-      <div className='row'>{homes}</div>
+      <div className="row">{homes}</div>
     </div>
   );
 }

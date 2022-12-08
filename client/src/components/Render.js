@@ -3,7 +3,7 @@ import Register from "./Register";
 import App from "./App";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Showproperty from "./Showproperty";
-import Editprofile from "./Editprofile";
+import AddtoHomes from "./AddtoHomes";
 
 function Render() {
 
@@ -22,7 +22,7 @@ function Render() {
             element={<Showproperty property={property} />}
           ></Route>
           <Route path="/register" element={<Register />}></Route>
-          <Route path="/profile" element={<Editprofile />}></Route>
+          <Route path="/new" element={<AddtoHomes/>}></Route>
         </Routes>
       </BrowserRouter>
     </div>

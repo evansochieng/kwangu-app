@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { useNavigate} from "react-router-dom"
+
 
 function Register() {
 
@@ -7,6 +9,9 @@ function Register() {
   const [contact, setContact] = useState("");
   const [password, setPassword] = useState("");
   const [passwordconfirmation, setPasswordConfirmation] = useState("");
+  const [error, setError] = useState([])
+
+  const navigate = useNavigate();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -24,11 +29,16 @@ function Register() {
         password_confirmation: passwordconfirmation,
       }),
     })
-      .then((r) => r.json())
-      .catch((error) => {
-        console.error("console error:", error);
-        console.log("Error!");
-      });;
+      .then((res) => {
+        if (res.ok) {
+          return navigate('/home')
+        } else {
+          res.json().then((err) => {
+            console.log(err.errors)
+            setError(err.errors);
+          });
+        }
+      })
   }
   return (
     <div className="forms-page">
@@ -67,6 +77,10 @@ function Register() {
             />
           </div>
 
+          <small id="emailHelp" class="form-text text-muted">
+            Password must be at least 8 characters
+          </small>
+
           <div className="inputfield">
             <input
               type="password"
@@ -97,6 +111,11 @@ function Register() {
           <button className="btn btn-primary" type="submit">
             Register
           </button>
+          {error.map((er) => (
+            <h5 key={er} className="err">
+              {er}!
+            </h5>
+          ))}
         </div>
       </form>
     </div>

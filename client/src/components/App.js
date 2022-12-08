@@ -1,40 +1,33 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import Login from "./Login";
-import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 import Home from "./Home";
 
-;
-
-function App({setproperty}) {
-
+function App({ setproperty }) {
   const [user, setUser] = useState("");
-  
-  const navigate = useNavigate()
 
-   useEffect(() => {
-     // auto-login
-     fetch("/me").then((r) => {
-       if (r.ok) {
-         r.json().then((user) => setUser(user));
-       }
-     });
-   }, []);
+  useEffect(() => {
+    // auto-login
+    fetch("/me").then((r) => {
+      if (r.ok) {
+        r.json().then((user) => setUser(user));
+      }
+    });
+  }, []);
 
   // if (!user) return <Login onLogin={setUser} />;
   if (user) {
+
+
     return (
-      <div>
+      <div className="grey">
         <Navbar />
         <br />
-        <h2>Welcome, {user.username}!</h2>
-        {/* <button className="btn btn-danger" onClick={() => navigate("/profile")}>
-          My Profile
-        </button> */}
+        <h2 id="h2">Welcome, {user.username}!</h2>
         <div>
           <button
             type="button"
-            class="btn btn-primary"
+            className="btn btn-primary"
             data-toggle="modal"
             data-target="#exampleModal"
           >
@@ -42,38 +35,56 @@ function App({setproperty}) {
           </button>
 
           <div
-            class="modal fade"
+            className="modal fade"
             id="exampleModal"
             tabindex="-1"
             aria-labelledby="exampleModalLabel"
             aria-hidden="true"
           >
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">
-                    {user.username}
+            <div className="modal-dialog">
+              <div className="modal-content">
+                <div className="modal-header">
+                  <h5 className="modal-title" id="exampleModalLabel">
+                    Edit Profile
                   </h5>
-                  <button
-                    type="button"
-                    class="close"
-                    data-dismiss="modal"
-                    aria-label="Close"
-                  >
-                    <span aria-hidden="true">&times;</span>
-                  </button>
                 </div>
-                <div class="modal-body">{ user.name}</div>
-                <div class="modal-footer">
+                <form>
+                  <div className="form-group">
+                    <label id="exampleInputEmail1">{user.name}</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="exampleInputEmail1"
+                      aria-describedby="emailHelp"
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label id="exampleInputEmail1">{user.username}</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="exampleInputEmail1"
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label id="exampleInputEmail1">{user.contact}</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="exampleInputEmail1"
+                    />
+                  </div>
+                  <button type="submit" className="btn btn-primary" id="pri">
+                    Submit
+                  </button>
+                </form>
+                <div className="modal-footer">
                   <button
                     type="button"
-                    class="btn btn-secondary"
+                    className="btn btn-secondary"
                     data-dismiss="modal"
                   >
                     Close
-                  </button>
-                  <button type="button" class="btn btn-primary">
-                    Save changes
                   </button>
                 </div>
               </div>
@@ -90,7 +101,5 @@ function App({setproperty}) {
       </div>
     );
   }
-
-  
-};
- export default App;
+}
+export default App;

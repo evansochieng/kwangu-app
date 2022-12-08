@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import Home from "./Home";
-// import { Route } from "react-router-dom";
-import Register from "./Register";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import { Navigate } from "react-router-dom";
+import { Route } from "react-router-dom";
   
 function Login({onLogin}) {
 
@@ -28,7 +25,7 @@ function Login({onLogin}) {
       .then((res) => {
         if (res.ok){
           res.json().then((user) => onLogin(user))
-          return <Route path="/" element={<Home onLogout={onLogin} />} />;
+          return <Route path="/home" element={<Home onLogout={onLogin} />} />;
         } else {
           res.json().then((err) => {
             setErrors(err.error);
