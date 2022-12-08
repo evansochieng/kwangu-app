@@ -3,6 +3,7 @@ import Login from "./Login";
 import Navbar from "./Navbar";
 import Home from "./Home";
 import Footer from "./Footer"
+import { Route } from "react-router-dom";
 
 function App({ setproperty }) {
   const [user, setUser] = useState("");
@@ -16,24 +17,42 @@ function App({ setproperty }) {
     });
   }, []);
 
+  function handleLogout() {
+    fetch("/logout", {
+      method: "DELETE",
+    }).then((res) => {
+      if (res.ok) {
+        setUser(null);
+        return <Route path="/" element={<Login />} />;
+      }
+    });
+  }
+
   // if (!user) return <Login onLogin={setUser} />;
   if (user) {
 
 
     return (
       <div className="grey">
-        <Navbar />
+        <Navbar handleLogout={handleLogout} onLogout={setUser} />
         <br />
         <h2 id="h2">Welcome, {user.username}!</h2>
         <div>
-          <button
-            type="button"
-            className="btn btn-primary"
-            data-toggle="modal"
-            data-target="#exampleModal"
-          >
-            My Profile
-          </button>
+          <div id="cart">
+            <div id="cart1">
+              <button
+                type="button"
+                className="btn btn-primary"
+                data-toggle="modal"
+                data-target="#exampleModal"
+              >
+                My Profile
+              </button>
+            </div>
+            <div id="cart2">
+              <button className="btn btn-secondary">My cart</button>
+            </div>
+          </div>
 
           <div
             className="modal fade"

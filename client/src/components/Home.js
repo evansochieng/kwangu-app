@@ -72,38 +72,9 @@ function Home({onLogout,setproperty}) {
     );
   }
 
-
-
-   //Logout
-  function handleLogout() {
-    fetch("/logout", {
-      method: "DELETE",
-    })
-      .then((res) => {
-        if (res.ok) {
-          onLogout(null)
-          return <Route path="/" element={<Login />}/>
-        }
-      });
-  }
-
   return (
     <div className="grey">
-      <button className="btn btn-primary" onClick={handleLogout} id="logout">
-        {onLogout}Log Out
-      </button>
-      <br />
-      <button
-        className="btn btn-primary"
-        id="btn"
-        onClick={() => {
-          return navigate("/new");
-        }}
-      >
-        Sell Property
-      </button>
-      <h2 id="header">Browse Our Propeties</h2>
-      <br />
+      <h2 id="header">Browse Our Properties</h2>
       <form className="form-inline " id="inline">
         <input
           className="form-control mr-sm-2"
