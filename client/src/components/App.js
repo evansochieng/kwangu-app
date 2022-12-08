@@ -68,7 +68,16 @@ function App({ setproperty }) {
                     Edit Profile
                   </h5>
                 </div>
-                <form>
+                <form className="edit-profile">
+                  <div className="form-group">
+                    <h5 id="exampleInputEmail1">Kwangu ID: {user.id}</h5>
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="exampleInputEmail1"
+                      placeholder="user id"
+                    />
+                  </div>
                   <div className="form-group">
                     <label id="exampleInputEmail1">{user.name}</label>
                     <input
@@ -76,6 +85,7 @@ function App({ setproperty }) {
                       className="form-control"
                       id="exampleInputEmail1"
                       aria-describedby="emailHelp"
+                      placeholder="username"
                     />
                   </div>
                   <div className="form-group">
@@ -84,6 +94,7 @@ function App({ setproperty }) {
                       type="text"
                       className="form-control"
                       id="exampleInputEmail1"
+                      placeholder="username"
                     />
                   </div>
                   <div className="form-group">
@@ -92,6 +103,7 @@ function App({ setproperty }) {
                       type="text"
                       className="form-control"
                       id="exampleInputEmail1"
+                      placeholder="contact"
                     />
                   </div>
                   <button type="submit" className="btn btn-primary" id="pri">

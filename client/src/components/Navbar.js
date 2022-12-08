@@ -38,17 +38,7 @@ function Navbar({onLogout, handleLogout}) {
                 <a class="nav-link" href="./About">
                   About Us
                 </a>
-              </li> */}
-            {/* <li className="nav-item">
-              <a className="nav-link" href="./Login">
-                Login
-              </a>
-            </li> */}
-            {/* <li class="nav-item">
-                <a class="nav-link" href="./Contact">
-                  Contact Us
-                </a>
-              </li> */}
+              </li> */}           
           </ul>
         </div>
       </div>

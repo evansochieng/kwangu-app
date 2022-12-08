@@ -9,9 +9,6 @@ function Login({onLogin}) {
   const [errors, setErrors] = useState([]);
 
 
-  // const navigate = useNavigate();
-
-
   function handleSubmit(e) {
     e.preventDefault();
     fetch("/login", {
@@ -36,52 +33,56 @@ function Login({onLogin}) {
 
   return (
     <div className="loginbox" id="grey">
-      <form className="forms" onSubmit={handleSubmit}>
-        <br></br>
-        <br></br>
-        <h1>Login here</h1>
-        <input
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          placeholder="Username"
-          type="text"
-          className="form-group form-control"
-          required
-        />
-        <br />
-        <input
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="Password"
-          type="password"
-          className="form-group form-control"
-          required
-        />{" "}
-        <br></br>
-        <button type="submit" className="btn btn-primary">
-          Login
-        </button>
-        <br></br>
-        {errors.map((err) => (
-          <h4 key={err} className="err">
-            {err}
-          </h4>
-        ))}
-        <a href="/Register">Forgot your password?</a>
-        <p>
-          Don't have an account yet?{" "}
-          <button
-            className="btn btn-primary"
-            onClick={() => {
-              return <Route path="/" element={<Home onLogout={onLogin} />} />;
-            }}
-          >
-            <a href="/Register" id="ch">
-              Register
-            </a>
+      <br />
+      <br />
+      <div className="card" style={{ width: "48rem" }} id="loginbox">
+        <form className="forms" onSubmit={handleSubmit}>
+          <br></br>
+          <br></br>
+          <h1>Login here</h1>
+          <input
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            placeholder="Username"
+            type="text"
+            className="form-group form-control"
+            required
+          />
+          <br />
+          <input
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Password"
+            type="password"
+            className="form-group form-control"
+            required
+          />{" "}
+          <br></br>
+          <button type="submit" className="btn btn-primary">
+            Login
           </button>
-        </p>
-      </form>
+          <br></br>
+          {errors.map((err) => (
+            <h4 key={err} className="err">
+              {err}
+            </h4>
+          ))}
+          <a href="/Register">Forgot your password?</a>
+          <p>
+            Don't have an account yet?{" "}
+            <button
+              className="btn btn-primary"
+              onClick={() => {
+                return <Route path="/" element={<Home onLogout={onLogin} />} />;
+              }}
+            >
+              <a href="/Register" id="ch">
+                Register
+              </a>
+            </button>
+          </p>
+        </form>
+      </div>
       <br />
       <br />
       <br />
@@ -102,9 +103,6 @@ function Login({onLogin}) {
       <br />
       <br />
       <br />
-      <br />
-      <br />
-      
     </div>
   );
 }
