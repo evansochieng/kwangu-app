@@ -41,7 +41,7 @@ function Register() {
       })
   }
   return (
-    <div className="forms-page">
+    <div className="forms-page" id="grey">
       <form className="forms" onSubmit={handleSubmit}>
         <br></br>
         <h2 className="title">Register</h2>
@@ -118,6 +118,21 @@ function Register() {
           ))}
         </div>
       </form>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
     </div>
   );
 	

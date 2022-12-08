@@ -35,7 +35,7 @@ function Login({onLogin}) {
   }
 
   return (
-    <div className="loginbox">
+    <div className="loginbox" id="grey">
       <form className="forms" onSubmit={handleSubmit}>
         <br></br>
         <br></br>
@@ -76,10 +76,35 @@ function Login({onLogin}) {
               return <Route path="/" element={<Home onLogout={onLogin} />} />;
             }}
           >
-            <a href="/Register">Register</a>
+            <a href="/Register" id="ch">
+              Register
+            </a>
           </button>
         </p>
       </form>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      
     </div>
   );
 }

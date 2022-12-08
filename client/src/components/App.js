@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Login from "./Login";
 import Navbar from "./Navbar";
 import Home from "./Home";
+import Footer from "./Footer"
 
 function App({ setproperty }) {
   const [user, setUser] = useState("");
@@ -92,6 +93,7 @@ function App({ setproperty }) {
           </div>
         </div>
         <Home onLogout={setUser} setproperty={setproperty} />
+        <Footer />
       </div>
     );
   } else {

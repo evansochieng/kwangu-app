@@ -35,6 +35,8 @@ function Home({onLogout,setproperty}) {
     // console.log(property)
       )
   }
+
+  
   
   
   const homes = houses.map((house) => (

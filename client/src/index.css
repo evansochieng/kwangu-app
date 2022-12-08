@@ -72,7 +72,7 @@ img{
   padding-left: 40px;
   
 }
-.grey{
+.grey,#grey{
   background-color: rgb(221, 225, 225);
 }
 .card{

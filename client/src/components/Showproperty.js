@@ -1,6 +1,25 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
+import {useNavigate} from "react-router-dom"
 
 function Showproperty({ property }) {
+
+  const [houses, setHouses] = useState([])
+
+   useEffect(() => {
+     fetch("/properties")
+       .then((res) => res.json())
+       .then((houses) => {
+         console.log(houses)
+         setHouses(houses);
+       })
+       .catch((error) => {
+         console.error("console error:", error);
+         console.log("Error!");
+       });
+   }, []);
+  
+  const navigate = useNavigate("");
+
 
   const {
     image_url,
@@ -11,9 +30,19 @@ function Showproperty({ property }) {
     no_of_bathrooms,
     description,
     user,
-    // id,
+    id,
   } = property;
-  
+
+  // Handle Delete
+
+  function handleDelete() {
+    fetch(`/properties/${id}`, {
+      method: "DELETE",
+    });
+    setHouses(houses.filter((house) => house.id !== id));
+    navigate('/home')
+  }
+
   return (
     <div className="grey">
       <div className="card w-50" id="crd">
@@ -38,7 +67,7 @@ function Showproperty({ property }) {
             <h6>Contact : {user.contact}</h6>
             <h6>Kwangu username : {user.username}</h6>
           </div>
-          <button className="btn btn-success">Buy</button>
+          <button className="btn btn-success" onClick={()=>handleDelete(houses.id)}>Buy</button>
         </div>
       </div>
     </div>

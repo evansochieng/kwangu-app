@@ -4,7 +4,7 @@ import App from "./App";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Showproperty from "./Showproperty";
 import AddtoHomes from "./AddtoHomes";
-import Footer from "./Footer";
+// import Footer from "./Footer";
 
 function Render() {
 
@@ -26,7 +26,6 @@ function Render() {
           <Route path="/new" element={<AddtoHomes/>}></Route>
         </Routes>
       </BrowserRouter>
-      <Footer/>
     </div>
   );
 }
