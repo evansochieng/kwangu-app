@@ -13,8 +13,7 @@ function Register() {
             <input
               type="text"
               className="form-group form-control"
-              placeholder="Name"
-            />
+              
           </div>
           
           <div className="inputfield">
