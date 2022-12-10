@@ -12,17 +12,7 @@ function Cart({property}) {
     console.log(home);
   };
 
-  const {
-    image_url,
-    name,
-    location,
-    price,
-    no_of_bedrooms,
-    no_of_bathrooms,
-    description,
-    user,
-    id,
-  } = property;
+  const {id,} = property;
 
   const navigate = useNavigate();
 

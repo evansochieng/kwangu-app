@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, Route } from "react-router-dom"
-import Cart from './Cart';
+import { useNavigate} from "react-router-dom"
 
 function Showproperty({ property }) {
 
@@ -38,7 +37,6 @@ function Showproperty({ property }) {
     no_of_bathrooms,
     description,
     user,
-    id,
   } = property;
 
  
@@ -86,7 +84,6 @@ function Showproperty({ property }) {
           <button className="btn btn-success" onClick={() => handleCheckCart()}>
             Go to Cart
           </button>
-          {/* onClick={() => handleDelete(houses.id)} */}
         </div>
       </div>
     </div>
