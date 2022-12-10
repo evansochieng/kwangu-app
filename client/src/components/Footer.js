@@ -42,7 +42,7 @@ function Footer() {
         </div>
 
         <div className="rights">
-          <h4>2020 @productreview.com.All rights reserved</h4>
+          <h6>2020 @kwanguhomes.com.All rights reserved</h6>
         </div>
       </div>
     </div>

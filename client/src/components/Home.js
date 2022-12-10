@@ -6,6 +6,7 @@ function Home({onLogout,setproperty}) {
 
   const [houses, setHouses] = useState([]);
   const [copyHouses, setCopyHouses] = useState("")
+  
 
   const navigate = useNavigate()
     
@@ -27,13 +28,11 @@ function Home({onLogout,setproperty}) {
     fetch(`properties/${id}`)
       .then((res) => res.json())
       .then((property) => {
-        console.log(property.user)
+        // console.log(property.user)
         setproperty(property)
         navigate('/show')
-          // return <Route path="/show" element={<Showproperty property= {property} />}/>
       }
-    // console.log(property)
-      )
+    )
   }
 
   
@@ -44,12 +43,12 @@ function Home({onLogout,setproperty}) {
       <div className="card">
         <img src={house.image_url} className="card-img-top" alt="..." />
         <div className="card-body">
-          <h5 className="card-title" id="title">
-            {house.name}
-          </h5>
           <h4 className="card-title" id="title">
-            Location : {house.location}
+            {house.name}
           </h4>
+          <h5 className="card-title" id="title">
+            Location : {house.location}
+          </h5>
           <h5 className="card-title" id="tile">
             {house.price}
           </h5>
@@ -86,6 +85,7 @@ function Home({onLogout,setproperty}) {
       </form>
       <br />
       <div className="row">{homes}</div>
+      
     </div>
   );
 }

@@ -4,6 +4,7 @@ import App from "./App";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Showproperty from "./Showproperty";
 import AddtoHomes from "./AddtoHomes";
+import Cart from "./Cart";
 // import Footer from "./Footer";
 
 function Render() {
@@ -23,7 +24,8 @@ function Render() {
             element={<Showproperty property={property} />}
           ></Route>
           <Route path="/register" element={<Register />}></Route>
-          <Route path="/new" element={<AddtoHomes/>}></Route>
+          <Route path="/new" element={<AddtoHomes />}></Route>
+          <Route path="/cart" element={<Cart property={property} />}></Route>
         </Routes>
       </BrowserRouter>
     </div>

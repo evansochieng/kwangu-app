@@ -3,10 +3,12 @@ import Login from "./Login";
 import Navbar from "./Navbar";
 import Home from "./Home";
 import Footer from "./Footer"
-import { Route } from "react-router-dom";
+import { Route, useNavigate } from "react-router-dom";
 
 function App({ setproperty }) {
   const [user, setUser] = useState("");
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     // auto-login
@@ -26,6 +28,10 @@ function App({ setproperty }) {
         return <Route path="/" element={<Login />} />;
       }
     });
+  }
+
+  function handleCheckCart() {
+    return navigate("/cart");
   }
 
   // if (!user) return <Login onLogin={setUser} />;
@@ -50,7 +56,9 @@ function App({ setproperty }) {
               </button>
             </div>
             <div id="cart2">
-              <button className="btn btn-secondary">My cart</button>
+              <button className="btn btn-secondary" onClick={handleCheckCart}>
+                My cart
+              </button>
             </div>
           </div>
 
@@ -68,7 +76,16 @@ function App({ setproperty }) {
                     Edit Profile
                   </h5>
                 </div>
-                <form>
+                <form className="edit-profile">
+                  <div className="form-group">
+                    <h5 id="exampleInputEmail1">Kwangu ID: {user.id}</h5>
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="exampleInputEmail1"
+                      placeholder="user id"
+                    />
+                  </div>
                   <div className="form-group">
                     <label id="exampleInputEmail1">{user.name}</label>
                     <input
@@ -76,6 +93,7 @@ function App({ setproperty }) {
                       className="form-control"
                       id="exampleInputEmail1"
                       aria-describedby="emailHelp"
+                      placeholder="username"
                     />
                   </div>
                   <div className="form-group">
@@ -84,6 +102,7 @@ function App({ setproperty }) {
                       type="text"
                       className="form-control"
                       id="exampleInputEmail1"
+                      placeholder="username"
                     />
                   </div>
                   <div className="form-group">
@@ -92,6 +111,7 @@ function App({ setproperty }) {
                       type="text"
                       className="form-control"
                       id="exampleInputEmail1"
+                      placeholder="contact"
                     />
                   </div>
                   <button type="submit" className="btn btn-primary" id="pri">
