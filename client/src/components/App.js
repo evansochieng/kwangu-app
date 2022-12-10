@@ -7,8 +7,28 @@ import { Route, useNavigate } from "react-router-dom";
 
 function App({ setproperty }) {
   const [user, setUser] = useState("");
+  const [name, setName] = useState("");
+  const [username, setUsername] = useState("");
+  const [contact, setContact] = useState("");
+  const [password, setPassword] = useState("");
+  
+
+  const userDetails = {name,username,contact,password}
 
   const navigate = useNavigate();
+
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    fetch(`/users/${user.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(userDetails),
+    });
+  }
 
   useEffect(() => {
     // auto-login
@@ -76,39 +96,45 @@ function App({ setproperty }) {
                     Edit Profile
                   </h5>
                 </div>
-                <form className="edit-profile">
+                <form className="edit-profile" onSubmit={handleSubmit}>
                   <div className="form-group">
-                    <h5 id="exampleInputEmail1">Kwangu ID: {user.id}</h5>
+                    <h6 id="exampleInputEmail1">Kwangu ID: {user.id}</h6>
+                  </div>
+                  <div className="form-group">
+                    <label id="exampleInputEmail1">Name</label>
                     <input
                       type="text"
+                      onChange={(e) => setName(e.target.value)}
                       className="form-control"
                       id="exampleInputEmail1"
-                      placeholder="user id"
+                      placeholder="name"
                     />
                   </div>
                   <div className="form-group">
-                    <label id="exampleInputEmail1">{user.name}</label>
+                    <label id="exampleInputEmail1">Username</label>
                     <input
                       type="text"
-                      className="form-control"
-                      id="exampleInputEmail1"
-                      aria-describedby="emailHelp"
-                      placeholder="username"
-                    />
-                  </div>
-                  <div className="form-group">
-                    <label id="exampleInputEmail1">{user.username}</label>
-                    <input
-                      type="text"
+                      onChange={(e) => setUsername(e.target.value)}
                       className="form-control"
                       id="exampleInputEmail1"
                       placeholder="username"
                     />
                   </div>
                   <div className="form-group">
-                    <label id="exampleInputEmail1">{user.contact}</label>
+                    <label id="exampleInputEmail1">Contact</label>
                     <input
                       type="text"
+                      onChange={(e) => setContact(e.target.value)}
+                      className="form-control"
+                      id="exampleInputEmail1"
+                      placeholder="contact"
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label id="exampleInputEmail1">Password</label>
+                    <input
+                      type="text"
+                      onChange={(e) => setPassword(e.target.value)}
                       className="form-control"
                       id="exampleInputEmail1"
                       placeholder="contact"
