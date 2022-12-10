@@ -3,10 +3,12 @@ import Login from "./Login";
 import Navbar from "./Navbar";
 import Home from "./Home";
 import Footer from "./Footer"
-import { Route } from "react-router-dom";
+import { Route, useNavigate } from "react-router-dom";
 
 function App({ setproperty }) {
   const [user, setUser] = useState("");
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     // auto-login
@@ -26,6 +28,10 @@ function App({ setproperty }) {
         return <Route path="/" element={<Login />} />;
       }
     });
+  }
+
+  function handleCheckCart() {
+    return navigate("/cart");
   }
 
   // if (!user) return <Login onLogin={setUser} />;
@@ -50,7 +56,9 @@ function App({ setproperty }) {
               </button>
             </div>
             <div id="cart2">
-              <button className="btn btn-secondary">My cart</button>
+              <button className="btn btn-secondary" onClick={handleCheckCart}>
+                My cart
+              </button>
             </div>
           </div>
 

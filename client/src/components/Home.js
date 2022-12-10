@@ -6,6 +6,7 @@ function Home({onLogout,setproperty}) {
 
   const [houses, setHouses] = useState([]);
   const [copyHouses, setCopyHouses] = useState("")
+  
 
   const navigate = useNavigate()
     
@@ -27,7 +28,7 @@ function Home({onLogout,setproperty}) {
     fetch(`properties/${id}`)
       .then((res) => res.json())
       .then((property) => {
-        console.log(property.user)
+        // console.log(property.user)
         setproperty(property)
         navigate('/show')
       }
@@ -84,6 +85,7 @@ function Home({onLogout,setproperty}) {
       </form>
       <br />
       <div className="row">{homes}</div>
+      
     </div>
   );
 }

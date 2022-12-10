@@ -11,6 +11,7 @@ function AddtoHomes() {
   const [no_of_bathrooms, setBaths] = useState("");
   const [user_id, setUser_id] = useState("");
   const [error, setError] = useState("");
+  const [selectedImage, setSelectedImage] = useState(null);
 
 
 
@@ -123,6 +124,32 @@ function AddtoHomes() {
           className="form-group form-control"
           required
         />
+
+        <div>
+          <h1>Upload Image</h1>
+          {selectedImage && (
+            <div>
+              <img
+                alt="not fount"
+                width={"250px"}
+                src={URL.createObjectURL(selectedImage)}
+              />
+              <br />
+              <button onClick={() => setSelectedImage(null)}>Remove</button>
+            </div>
+          )}
+          <br />
+
+          <br />
+          <input
+            type="file"
+            name="myImage"
+            onChange={(event) => {
+              console.log(event.target.files[0]);
+              setSelectedImage(event.target.files[0]);
+            }}
+          />
+        </div>
         <br></br>
         <button type="submit" className="btn btn-warning">
           Sell

@@ -1,15 +1,23 @@
 import React, { useState, useEffect } from 'react';
-import {useNavigate} from "react-router-dom"
+import { useNavigate, Route } from "react-router-dom"
+import Cart from './Cart';
 
 function Showproperty({ property }) {
 
   const [houses, setHouses] = useState([])
+  const [home, setHome] = useState([]);
+
+  const handleClick = (event) => {
+    setHome([...home, property]);
+  };
+
+  console.log(home)
 
    useEffect(() => {
      fetch("/properties")
        .then((res) => res.json())
        .then((houses) => {
-         console.log(houses)
+        //  console.log(houses)
          setHouses(houses);
        })
        .catch((error) => {
@@ -33,14 +41,13 @@ function Showproperty({ property }) {
     id,
   } = property;
 
-  // Handle Delete
+ 
 
-  function handleDelete() {
-    fetch(`/properties/${id}`, {
-      method: "DELETE",
-    });
-    setHouses(houses.filter((house) => house.id !== id));
-    navigate('/home')
+  function addtoCart() {
+    alert("Added to Cart successfully")
+  }
+  function handleCheckCart() {
+    navigate ('/cart')
   }
 
   return (
@@ -67,7 +74,19 @@ function Showproperty({ property }) {
             <h6>Contact : {user.contact}</h6>
             <h6>Kwangu username : {user.username}</h6>
           </div>
-          <button className="btn btn-success" onClick={()=>handleDelete(houses.id)}>Buy</button>
+          <button
+            className="btn btn-success"
+            onClick={() => {
+              handleClick();
+              addtoCart();
+            }}
+          >
+            Buy
+          </button>
+          <button className="btn btn-success" onClick={() => handleCheckCart()}>
+            Go to Cart
+          </button>
+          {/* onClick={() => handleDelete(houses.id)} */}
         </div>
       </div>
     </div>
