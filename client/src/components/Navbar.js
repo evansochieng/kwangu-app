@@ -1,48 +1,49 @@
-import React from 'react'
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
-function Navbar() {
+function Navbar({onLogout, handleLogout}) {
+
+  const navigate = useNavigate();
+
   return (
-  
-<div className="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div className="logo">
-         
-        </div>
-        <div className="collapse navbar-collapse">
-          <div class="collapse navbar-collapse" id="navbar">
-            <h1 className="header">
-              <a href="/" id="ch">
-                KWANGU APP
-              </a>
-            </h1>
-            <form class="form-inline" id="inline">
-              <input
-                class="form-control mr-sm-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              ></input>
-            </form>
-            <ul class="navbar-nav mr-auto">
-              {/* <li class="nav-item">
+    <div className="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div className="logo"></div>
+      <div className="collapse navbar-collapse">
+        <div className="collapse navbar-collapse" id="navbar">
+          <h1 className="header">
+            <a href="/home" id="ch">
+              Kwangu Homes
+            </a>
+          </h1>
+
+          <ul className="navbar-nav mr-auto">
+            <button
+              className="btn btn-primary"
+              id="btn"
+              onClick={() => {
+                return navigate("/new");
+              }}
+            >
+              Sell Property
+            </button>
+            <br />
+            <button
+              className="btn btn-primary"
+              onClick={handleLogout}
+              id="logout"
+            >
+              {onLogout}Log Out
+            </button>
+            {/* <li class="nav-item">
                 <a class="nav-link" href="./About">
                   About Us
                 </a>
-              </li> */}
-              <li class="nav-item">
-                <a class="nav-link" href="./Login">
-                  Login
-                </a>
-              </li>
-              {/* <li class="nav-item">
-                <a class="nav-link" href="./Contact">
-                  Contact Us
-                </a>
-              </li> */}
-            </ul>
-          </div>
+              </li> */}           
+          </ul>
         </div>
       </div>
-    );
+    </div>
+  );
      
   
 }

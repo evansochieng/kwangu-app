@@ -1,4 +1,154 @@
-.forms{
-  margin-left: 25%;
-  margin-right: 25%;
+*{
+  margin: 0px auto;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
 }
+
+.forms{
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+.header{
+  margin-left: 5%;
+  margin-right: 7%;
+}
+#ch{
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+#navbar{
+  display: flex;
+  justify-content: space-around;
+  font-size: 22px;
+}
+#btn{
+  text-decoration: none;
+  color: white;
+}
+
+.housediv{
+  display: flex;
+}
+img{
+  border-radius: 9px;
+  height: 300px; 
+}
+#h2{
+  color: #0077ff;
+  font-weight: 600;
+  font-size: 18px;
+  margin-left: 5px;
+}
+
+#header{
+  color: #0077ff;
+  display: flex;
+  justify-content: center;
+}
+#inline{
+  margin-left: 42%;
+}
+.err{
+  color: red;
+}
+#logout{
+  display: flex;
+  justify-content: flex-end;
+  float: right;
+  margin-top: 50px;
+  margin-left: 300px;
+}
+#btn{
+  display: flex;
+  justify-content: flex-end;
+  float: right;
+  margin-top: 50px;
+  margin-right: -100px;
+}
+.row{
+  padding-left: 40px;
+  
+}
+.grey,#grey{
+  background-color: rgb(221, 225, 225);
+}
+.card{
+  width: 18rem;
+}
+
+#img-top{
+  display: flex;
+  height: 600px;
+  justify-content: center;
+}
+#crd{
+  margin-left: 20%;
+}
+#title{
+  color: #0077ff;
+}
+
+#exampleInputEmail1{
+  width: 70%;
+  margin-left: 10%;
+}
+#pri{
+  margin-left: 10%;
+}
+
+/* footer */
+.footer{
+  background-color: #228fc1;
+  color: White;
+  margin-top: 30px;
+  padding: 10px;
+}
+.foo{
+  display: flex;
+  justify-content: space-evenly;
+}
+.rows{
+  flex-direction: column;
+  margin-left: 5%;
+  width: 100%;
+}
+.rights{
+  display: flex;
+  justify-content: center;
+}
+.h-footer{
+  font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+#p-about{
+  color: white;
+  margin-left: -40px;
+  font-size: 16px;
+}
+#p-abouts{
+  color: white;
+  margin-left: 0px;
+  font-size: 16px;
+}
+
+#cart{
+  display: flex;
+}
+
+#cart1{
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 5px;
+}
+
+#cart2 {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 5px;
+}
+
+

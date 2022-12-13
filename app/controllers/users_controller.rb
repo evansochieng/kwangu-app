@@ -20,6 +20,17 @@ class UsersController < ApplicationController
     end
   end
 
+
+  #Autologin
+  def autologin
+     @user = User.find_by(id: session[:user_id])
+     if @user
+      render json: @user, status: :ok
+    else
+      render json: { errors: ["Not authorized"] }, status: :unauthorized
+    end
+  end
+
   # POST /users
   def create
     @user = User.create!(user_params)

@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from '../src/components/App';
+import Render from '../src/components/Render';
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Render />
   </React.StrictMode>,
   document.getElementById('root')
 );
