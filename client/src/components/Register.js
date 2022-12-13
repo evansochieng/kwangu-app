@@ -8,14 +8,16 @@ function Register() {
         <h2 className="title">Register</h2>
         <br></br>
         <br></br>
-        <div className="form">
-          <div className="inputfield">
+       
+
+        <div className="inputfield">
             <input
               type="text"
               className="form-group form-control"
-              
+              placeholder="Name"
+            />
           </div>
-          
+         
           <div className="inputfield">
             <input
               type="text"
@@ -52,15 +54,17 @@ function Register() {
             type="submit">
            
               Register
-            
-          </button>
-        </div>
+            </button>
+       
+        
+
       </form>
-    </div>
+      </div>
+    
   );
 	
 
 }
 
-export default Register
+export default Register;
 
